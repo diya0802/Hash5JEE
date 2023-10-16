@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page for HASH5JEE</title>
+    <link href="style1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">HASH5JEE</div>
+        <div class="about">
+            <ul class ="main-nav ">
+                <li class="nav-item"><a href="#" onclick="loadContent('index.html', this) ">Home</a></li>
+                <li class="nav-item"><a href="#main" onclick="toggleActive(this)">About</a></li>
+                <li class="nav-item"><a href="#footer" onclick="toggleActive(this)">Contact</a></li>
+                <li<button class ="download"><a href="D:/Internship/Landing Page/Resume.pdf" download="document.pdf" onclick="toggleActive(this)">  Download CV </a></button></li> 
+            </ul>         
+            
+        </div>
+    </nav>
+    
+    <main id="main">
+        <section class="bg">
+            <!-- <div class="overlay"></div> -->
+            <div class="main_view">
+                <div class="card-1">
+                    <div class="desc-1">
+                        <h1 style="color: orange;">Hello I'm </h1>
+                        <h3 style="font-size: 60px;">Diya Bisht</h3>
+                        <p style="font-size: 20px; font-weight: bold;">I'm Fresher and always want to learn new skills <br>I'm also passionate about my work.</p>   
+                    
+                    <div class="icon-container">
+                        <p style="color: green; font-size: 25px; "><u>Profile</u> -> </p>
+                        <a href="https://www.linkedin.com/in/diya-bisht-b62923204" target="_blank" class="icon">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="https://leetcode.com/Lt_Diya_Bisht" target="_blank" class="icon icon-leetcode">
+                            <i class="fa fa-code"></i>
+                        </a>
+                        <a href="https://github.com/diya0802" target="_blank" class="icon icon-github">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                    <img src="diyabisht.png" alt="profile" class="profile">    
+                </div>
+            </div>
+        </section>
+        <section class="aboutus">
+            <div class="about-content">
+                <h1 style="font-size: 30px; font-weight: bold; color: blue; padding-bottom: 30px;">Internship Program </h1>
+                <h3>I'm thrilled that I have been selected for an web development 
+                    internship program at <i><u>HASH5JEE</u></i><br> 
+                </h3>
+                <h3>In this internship the tasks are assign to us. These are:</h3>
+            </div>
+            
+            <div class="internship">
+                
+                <section class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <h2 class="internship-content">Task 1</h2>
+                            </div>
+                            <div class="flip-box-back">
+                                <p class="internship-content">In the 1st task of my internship we have to build langind page</p>
+                            </div>
+                        </div>
+                    
+                </section>
+                <section class="flip-box">
+                    
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <h2 class="internship-content">Task 2</h2>
+                            </div>
+                            <div class="flip-box-back">
+                                <p class="internship-content">This task will assign on 2nd week.</p>
+                            </div>
+                        </div>
+                    
+                </section>
+                <section class="flip-box">
+                    
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <h2 class="internship-content">Task 3</h2>
+                            </div>
+                            <div class="flip-box-back">
+                                <p class="internship-content">This task will assign on 3rd week</p>
+                            </div>
+                        </div>
+                    
+                </section>
+                <section class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <h2 class="internship-content">Task 4</h2>
+                            </div>
+                            <div class="flip-box-back">
+                                <p class="internship-content">This task will assign on 4th week</p>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </section>
+        
+        </section>
+    </main>
+   
+    <footer id="footer">
+        <ul class="contact-list">
+            <li class="contact-list-item">
+                <i class="fa fa-envelope"></i> <a href="mailto:diyabisht1963@gmail.com">Email</a>
+            </li>
+            <li class="contact-list-item">
+                <i class="fa fa-phone"></i> +91 7895548724
+            </li>
+            <li class="contact-list-item">
+                <a href="https://www.linkedin.com/in/diya-bisht-b62923204" target="_blank">
+                    <i class="fa fa-linkedin"></i> Diya Bisht
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        function toggleActive(clickedLink) {
+            
+            const links = document.querySelectorAll('a');
+            links.forEach(link => link.classList.remove('active'));
+            clickedLink.classList.add('active');
+        }
+        function loadContent(Url, clickedLink) {
+            
+            const links = document.querySelectorAll('a');
+            links.forEach(link => link.classList.remove('active'));
+            clickedLink.classList.add('active');
+            const contentContainer = document.getElementById('content-container');
+            fetch(Url)
+                .then(response => response.text())
+                .then(content => {
+                    contentContainer.innerHTML = content;
+                });
+        }
+    </script>
+    
+</body>
+</html>

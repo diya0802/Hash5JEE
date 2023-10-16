@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    
+}
+html,body{
+    background-color: rgb(38, 30, 30);
+    padding: 0;
+    margin:0;    
+}
+body{
+    overflow-x: hidden;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    word-wrap: break-word;
+    font-weight: 400;
+    background-color: #fff;
+    color: #6f6b80;
+    
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 500;
+    line-height: 0.8;
+    font-family: 'Jost', sans-serif;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: #a03737;
+}
+a.active{
+    color: #a03737;
+}
+div{
+    display: block;
+}
+.navbar{
+    position: fixed;
+    top : 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ; 
+    padding: 2% 5%;
+    /* margin-bottom: 1%; */
+    z-index: 10;
+    background-color: #0b0a0a;
+}
+
+
+*::-webkit-scrollbar{
+    display: none;
+}
+.about .logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo{
+    float: left;
+    padding: 15px 5px;
+    margin: 10px 10px;
+    font-size: 3rem;
+    font-weight:1000;
+    color:white;
+    width: 100%;
+    height: 100%;
+    
+    /* opacity: 0.8; */
+}
+.main-nav{
+    padding: 6px 6px;
+    margin: 10px 10px;
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+    /* display: none; */
+    cursor: pointer;
+}
+.nav-item{
+    padding: 7px 7px;
+    margin-right: 20px;
+    color:white;
+
+}
+.download{    
+    background-color: #a03737;
+    border-color: #dc030f;
+    color: white;
+    padding:5px 21px;
+    border-radius: 18px;
+    height : 35px ;
+    width: 160px;
+}
+.download:hover{
+    background-color: green;
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0,0,0,0.6); */
+}
+.main_view{
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    color: rgb(225, 225, 225,1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 100%;
+    height: 100%;
+    object-fit:cover ;
+
+
+}
+
+
+.card-1{
+    /* border-bottom:8px solid grey; */
+    width: 100%;
+    padding: 50px;
+}
+.card-1{
+    /* position:relative; */
+    display: inline-grid;
+    grid-template-columns: 50% 30%;
+    text-align: left;
+    align-items: center;
+    padding: 25px 45px 50px;
+}
+.desc-1{
+    padding-right: 40px ;
+    padding-left: 20px;
+}
+.profile{
+    /* width: 600px;
+    height: 500px; */
+    max-width: 600px;
+    max-height: 300px;
+}
+
+.icon-container {
+    padding-top: 20px;
+    padding-left: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    font-size: 30px;
+    color: #0077B5; /* LinkedIn Blue */
+    cursor: pointer;
+}
+
+.icon-leetcode {
+    color: #FFA116; /* LeetCode Yellow */
+}
+
+.icon-github {
+    color: #646262; /* GitHub Black */
+}
+
+.aboutus{
+    position: absolute;
+    top: 100%;
+    border-top:8px solid grey;
+    width: 100%;
+    color: white;
+}
+.about-content{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 15px; 
+
+}
+
+/* Profile Start */
+.internship {
+    display: flex;
+    /* position: absolute; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    
+    /* grid-template-columns:0%; */
+    width: 100%;
+    padding-bottom: 15%;
+}
+
+.internship-content {
+    margin-top: 70px;
+    text-align: center;
+
+}
+
+.flip-box {
+    /* margin: -90px 50px 20px 20px; */
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 300px;
+    height: 200px;
+    border: 5px solid #f1f1f1;
+    border-radius: 25px;
+    perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side */
+.flip-box-front {
+    background: linear-gradient(rgb(0 0 0), rgba(188, 195, 203, 0.679));
+    border-radius: 20px;
+    /* background-color: #bbb; */
+    color: rgb(255, 255, 255);
+}
+
+
+/* Style the back side */
+.flip-box-back {
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+footer {
+    /* display: flex; */
+    background-color: #101010;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    /* bottom:auto; */
+    margin-top: 100%;
+}
+
+/* Contact list styles */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-list-item {
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+/* Social media icon styles (Font Awesome) */
+.fa {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+/* Style the LinkedIn icon */
+.fa-linkedin {
+    color: #0077B5;
+}
